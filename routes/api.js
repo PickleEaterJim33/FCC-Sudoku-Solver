@@ -26,11 +26,11 @@ module.exports = function (app) {
         return res.send({ error: "Invalid value" });
       }
 
+      coordinate = coordinate.toLowerCase();
       if (!/^[a-i][1-9]$/.test(coordinate)) {
         return res.send({ error: "Invalid coordinate" });
       }
 
-      coordinate = coordinate.toLowerCase();
       let row = coordinate[0].charCodeAt() - 'a'.charCodeAt();
       let col = +coordinate[1] - 1;
 

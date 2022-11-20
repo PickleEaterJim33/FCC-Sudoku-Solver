@@ -10,7 +10,7 @@ class SudokuSolver {
     }
   }
 
-  checkRowPlacement(puzzleString, row, column, value) {
+  checkRowPlacement(puzzleString, row, column, value) { // row and column 0-8 not 1-9; value must be string
     for (let j = 0; j < 9; ++j) {
       if (j !== column && puzzleString[row * 9 + j] === value) {
         return false;
@@ -20,7 +20,7 @@ class SudokuSolver {
     return true;
   }
 
-  checkColPlacement(puzzleString, row, column, value) {
+  checkColPlacement(puzzleString, row, column, value) { // row and column 0-8 not 1-9; value must be string
     for (let i = 0; i < 9; ++i) {
       if (i !== row && puzzleString[i * 9 + column] === value) {
         return false;
@@ -30,7 +30,7 @@ class SudokuSolver {
     return true;
   }
 
-  checkRegionPlacement(puzzleString, row, column, value) {
+  checkRegionPlacement(puzzleString, row, column, value) { // row and column 0-8 not 1-9; value must be string
     let regRowStart = ~~(row / 3); // result from ~~ is equivalent to Math.floor for positive numbers
     let regColStart = ~~(column / 3);
 
